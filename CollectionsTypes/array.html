@@ -1,0 +1,801 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Python com Exemplos">
+      
+      
+      
+        <meta name="author" content="Carol Martão - Guilherme Rocha">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Array - Vetores - IEEE CS UFABC | Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#declaracao-de-uma-lista" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="IEEE CS UFABC | Python" class="md-header__button md-logo" aria-label="IEEE CS UFABC | Python" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IEEE CS UFABC | Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Array - Vetores
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../comecando/configuracoes.md" class="md-tabs__link">
+        Configuração
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../PrimitiveTypes/types.html" class="md-tabs__link md-tabs__link--active">
+        Sintaxe e Exercicios Resolvidos
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="IEEE CS UFABC | Python" class="md-nav__button md-logo" aria-label="IEEE CS UFABC | Python" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    IEEE CS UFABC | Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Configuração
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Configuração" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Configuração
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comecando/configuracoes.md" class="md-nav__link">
+        Ambiente de Desenvolvimento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comecando/addamigo.md" class="md-nav__link">
+        IDEs - Editores de Texto
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Sintaxe e Exercicios Resolvidos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sintaxe e Exercicios Resolvidos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Sintaxe e Exercicios Resolvidos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PrimitiveTypes/types.html" class="md-nav__link">
+        Tipos Primitivos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuxFuntions/io.html" class="md-nav__link">
+        Console IO
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structs/conditional.html" class="md-nav__link">
+        Estruturas de Condicional
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structs/loop.html" class="md-nav__link">
+        Estruturas de Repetição
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Array - Vetores
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="array.html" class="md-nav__link md-nav__link--active">
+        Array - Vetores
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#declaracao-de-uma-lista" class="md-nav__link">
+    Declaração de uma Lista:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acesso-aos-elementos" class="md-nav__link">
+    Acesso aos elementos:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adicao-unitaria-e-de-colecoes" class="md-nav__link">
+    Adição Unitária e de Coleções:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remocao-unitaria-e-de-colecoes" class="md-nav__link">
+    Remoção Unitária e de Coleções:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propriedades-e-outras-funcoes-de-listas" class="md-nav__link">
+    Propriedades e outras funções de Listas:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#percorrendo-listas" class="md-nav__link">
+    Percorrendo Listas:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geracao-e-filtragem-de-listas" class="md-nav__link">
+    Geração e Filtragem de Listas:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="matrix.html" class="md-nav__link">
+        Matrix - Matrizes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dictionary.html" class="md-nav__link">
+        Dicionários
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="set.html" class="md-nav__link">
+        Sets - Conjuntos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Funtions/func.html" class="md-nav__link">
+        Funções (def)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Funtions/lambda.html" class="md-nav__link">
+        Expressões Lambda (lambda)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuxFuntions/file.html" class="md-nav__link">
+        Arquivos
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#declaracao-de-uma-lista" class="md-nav__link">
+    Declaração de uma Lista:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acesso-aos-elementos" class="md-nav__link">
+    Acesso aos elementos:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adicao-unitaria-e-de-colecoes" class="md-nav__link">
+    Adição Unitária e de Coleções:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remocao-unitaria-e-de-colecoes" class="md-nav__link">
+    Remoção Unitária e de Coleções:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propriedades-e-outras-funcoes-de-listas" class="md-nav__link">
+    Propriedades e outras funções de Listas:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#percorrendo-listas" class="md-nav__link">
+    Percorrendo Listas:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geracao-e-filtragem-de-listas" class="md-nav__link">
+    Geração e Filtragem de Listas:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Array - Vetores</h1>
+                
+                <div>
+<p>Agora vamos apresentar a estrutura de dados chamada lista, este tipo de estrutura permite armazenar valor de um mesmo tipo de maneira ordenada, no geral coleções de dados são estruturas muito tranquilas de trabalhar em Python, a linguagem implementa muitas funções nativas e tem uma sintaxe bem versátil para trabalhar com listas. Em linguagens de tipo estático a definição de array é diferente da de lista, um array aloca um espaço de memória contigo e fixo isso significa que uma vez declarado um array nestas linguagens ele vai ocupar aquele espaço na memória até o final da execução do programa ou até um <b>"coletor de lixo"</b> ser acionado, enquanto as listas são estruturas dinâmicas no sentido de alocação de memória, podemos adicionar e remover valores dela sem problemas, em Python você não vai ter essa diferenciação, portanto vamos considerar por praticidade que arrays e listas são as mesmas entidades.</p>
+
+<p>NOTA: Python permite que você tenha uma lista com itens de tipo diferentes, mas é importante dizer que você <b>deve</b> sempre querer trabalhar com coleções de somente um tipo de dados, isso evita muitos <b>bugs</b> no seu código e é uma boa prática em programação, se você esta ciente disso e prefere utilizar essa <b>"vantagem"</b> da linguagem use-a com cuidado.</p>
+</div>
+
+<h3 id="declaracao-de-uma-lista">Declaração de uma Lista:<a class="headerlink" href="#declaracao-de-uma-lista" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
+</code></pre></div>
+<p>NOTE QUE: As declarações feitas acima seguem uma restrição imposta em nossa definição, é uma coleção de elementos ordenados e do mesmo tipo.</p>
+<p>Para entendermos melhor as lista é importante saber que elas são estruturas indexadas, ou seja, cada elemento da lista tem uma posição especifica nela que sempre começa no valor 0 e termina no valor n -1 , onde n é o numero de elementos que temos na lista.</p>
+<h3 id="acesso-aos-elementos">Acesso aos elementos:<a class="headerlink" href="#acesso-aos-elementos" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="s1">&#39;Escreve no console o valor 1&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="s1">&#39;Escreve no console o valor 2&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">209</span><span class="p">])</span> <span class="s1">&#39;Retorna um erro kkkkk&#39;</span>
+</code></pre></div>
+<p>NOTE QUE: O erro ao escrever o item de posição 209 no console já era esperado pois como dito anteriormente só temos acesso ao índice de valor n-1, onde n é o numero de itens da lista.</p>
+<h3 id="adicao-unitaria-e-de-colecoes">Adição Unitária e de Coleções:<a class="headerlink" href="#adicao-unitaria-e-de-colecoes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="s1">&#39;Adiciona na posição 0 da lista o valor 1&#39;</span>
+<span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="s1">&#39;Adiciona na posição 1 da lista o valor 2&#39;</span>
+
+<span class="n">lista</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="s1">&#39;Adiciona na posição 2 da lista o valor 3&#39;</span>
+
+<span class="n">lista</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span> <span class="s1">&#39;Adiciona na posição 3 da lista o valor 4&#39;</span>
+
+<span class="n">lista</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="s1">&#39;Adiciona na posição 4 e 5 respectivamente os valores 5,6&#39;</span>
+
+<span class="n">lista_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="n">lista</span> <span class="o">+=</span> <span class="n">lista_2</span>
+<span class="s1">&#39;Concatena a lista com a lista_2, mesmo efeito de extend&#39;</span>
+
+<span class="n">lista_2</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="s1">&#39;Extende a lista com a própria lista, ou seja, lista_2 = [7,8,9,10,7,8,9,10]&#39;&#39;</span>
+</code></pre></div>
+<h3 id="remocao-unitaria-e-de-colecoes">Remoção Unitária e de Coleções:<a class="headerlink" href="#remocao-unitaria-e-de-colecoes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="n">ultimo</span> <span class="o">=</span> <span class="n">lista</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="s1">&#39;Remove e retorna o ultimo item da lista, ou seja, lista = [1,2,3,4] e ultimo = 5&#39;</span>
+
+<span class="n">lista</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="s1">&#39;Remove a primeira ocorrencia do valor 2 da lista caso ele exista&#39;</span>
+</code></pre></div>
+<h3 id="propriedades-e-outras-funcoes-de-listas">Propriedades e outras funções de Listas:<a class="headerlink" href="#propriedades-e-outras-funcoes-de-listas" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;123&quot;</span><span class="p">,</span><span class="s2">&quot;456&quot;</span><span class="p">]</span>
+<span class="n">comprimentoDaLista</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+
+<span class="n">lista</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="s1">&#39;O ultimos elementos da lista se tornam seus primeiros, ou seja, lista = [&quot;456&quot;, &quot;123&quot;]&#39;</span>
+
+<span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="s1">&#39;Ordena os elementos da lista de acordo com o tipo dos elementos, strings alfabeticamente, { int, float } crescente&#39;</span>
+
+<span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="s1">&#39;Ordena os elementos da lista em ordem decrescente de acordo com a implementação do tipo dos elementos&#39;</span>
+</code></pre></div>
+<h3 id="percorrendo-listas">Percorrendo Listas:<a class="headerlink" href="#percorrendo-listas" title="Permanent link">&para;</a></h3>
+<p>Bom como já passamos pelos Loops vamos ver como utiliza-los para percorrer nossas listas, podemos também realizar operações enquanto percorremos elas, veremos os exemplos abaixo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="n">indice</span><span class="p">])</span>
+</code></pre></div>
+<p>Okay o algoritmo acima é bem simples, ele só escreve no console os elementos da nossa lista, vamos ver exemplos um pouco mais complexos, aplicando filtros, e até mesmo gerando listas de maneira mais simples.</p>
+<h3 id="geracao-e-filtragem-de-listas">Geração e Filtragem de Listas:<a class="headerlink" href="#geracao-e-filtragem-de-listas" title="Permanent link">&para;</a></h3>
+<p>1-) Gerando uma Lista de 0 até n - 1 sem restrição:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o limite da lista: &quot;</span><span class="p">)))]</span>
+</code></pre></div>
+<p>2-) Gerando uma lista de 0 até n -1 somente com os valores pares:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o limite da lista: &quot;</span><span class="p">)))</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<p>3-) Gerando uma lista de 0 até n-1 pegando os valores ímpares e elevando-os ao quadrado e os elementos pares multiplicados pelo seu sucessor:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o limite da lista: &quot;</span><span class="p">)))]</span>
+</code></pre></div>
+<div class = "justify">
+<p>Os exemplos acima podem sofrer modificações de acordo com suas necessidades, essa sintaxe é muito poderosa e basicamente permite quaisquer operações com os dados durante a geração da lista, aliada com as funções temos uma ferramenta muito poderosa, mas vamos com calma.</p>
+
+<p>Bom vimos nos 3 exemplos acima que gerar listas em Python é super simples, entretanto se já tivermos nossa base de dados armazenada em uma lista em Python como podemos apenas filtra-lá de maneira simples, nos exemplos abaixo vamos simular isso.</p>
+</div>
+<p>1-) Temos uma lista de frutas e queremos filtrar para pegar apenas frutas que o nome comece com uma determinada letra:</p>
+<div class="highlight"><pre><span></span><code><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span><span class="s2">&quot;pera&quot;</span><span class="p">,</span><span class="s2">&quot;morango&quot;</span><span class="p">,</span><span class="s2">&quot;uva&quot;</span><span class="p">,</span><span class="s2">&quot;abacate&quot;</span><span class="p">,</span><span class="s2">&quot;laranja&quot;</span><span class="p">,</span><span class="s2">&quot;mamão&quot;</span><span class="p">]</span>
+
+<span class="n">letra</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite a letra: &quot;</span><span class="p">)</span>
+
+<span class="s1">&#39;list comprehension&#39;</span>
+<span class="n">frutasFiltrada</span> <span class="o">=</span> <span class="p">[</span><span class="n">fruta</span> <span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="n">frutas</span> <span class="k">if</span> <span class="n">fruta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">letra</span><span class="p">]</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Structs/loop.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Estruturas de Repetição" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Estruturas de Repetição
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="matrix.html" class="md-footer__link md-footer__link--next" aria-label="Próximo: Matrix - Matrizes" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              Matrix - Matrizes
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 IEEE Computer Society UFABC
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.placeholder": "Digite para iniciar a busca", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

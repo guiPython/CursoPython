@@ -1,0 +1,59 @@
+#Project Information
+site_name: IEEE CS UFABC | Python
+site_description: Python com Exemplos
+site_author: Carol Martão - Guilherme Rocha
+
+#Repository
+repo_name: Repository Name
+#repo_url: Repository URL
+
+# Copyright
+copyright: "Copyright &copy; 2021 IEEE Computer Society UFABC"
+
+#Theme Style
+theme:
+    name: material
+    language: pt
+    logo: assets/logo.png
+
+    #Options
+    palette:
+        scheme: default
+        primary: indigo
+        accent: indigo
+
+    features:
+        - navigation.tabs
+extra_css:
+    - stylesheets/extra.css
+
+# Extensions
+markdown_extensions:
+    - admonition
+    - codehilite:
+          guess_lang: false
+    - toc:
+          permalink: true
+    - pymdownx.highlight
+    - pymdownx.superfences
+
+#Pages
+nav:
+    - Home: index.md
+    - Configuração:
+          - Ambiente de Desenvolvimento: comecando/configuracoes.md
+          - IDEs - Editores de Texto: comecando/addamigo.md
+
+    ## Usando Servidores
+    - Sintaxe e Exercicios Resolvidos:
+          - Tipos Primitivos: PrimitiveTypes/types.md
+          - Console IO: AuxFuntions/io.md
+          - Estruturas de Condicional: Structs/conditional.md
+          - Estruturas de Repetição: Structs/loop.md
+          - Array - Vetores: CollectionsTypes/array.md
+          - Matrix - Matrizes: CollectionsTypes/matrix.md
+          - Dicionários: CollectionsTypes/dictionary.md
+          - Sets - Conjuntos: CollectionsTypes/set.md
+          - Funções (def): Funtions/func.md
+          - Expressões Lambda (lambda): Funtions/lambda.md
+          - Arquivos: AuxFuntions/file.md

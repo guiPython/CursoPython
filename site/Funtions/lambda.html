@@ -1,0 +1,719 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Python com Exemplos">
+      
+      
+      
+        <meta name="author" content="Carol Martão - Guilherme Rocha">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Expressões Lambda (lambda) - IEEE CS UFABC | Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sintaxe" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="IEEE CS UFABC | Python" class="md-header__button md-logo" aria-label="IEEE CS UFABC | Python" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IEEE CS UFABC | Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Expressões Lambda (lambda)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../comecando/configuracoes.md" class="md-tabs__link">
+        Configuração
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../PrimitiveTypes/types.html" class="md-tabs__link md-tabs__link--active">
+        Sintaxe e Exercicios Resolvidos
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="IEEE CS UFABC | Python" class="md-nav__button md-logo" aria-label="IEEE CS UFABC | Python" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    IEEE CS UFABC | Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Configuração
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Configuração" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Configuração
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comecando/configuracoes.md" class="md-nav__link">
+        Ambiente de Desenvolvimento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comecando/addamigo.md" class="md-nav__link">
+        IDEs - Editores de Texto
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Sintaxe e Exercicios Resolvidos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sintaxe e Exercicios Resolvidos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Sintaxe e Exercicios Resolvidos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PrimitiveTypes/types.html" class="md-nav__link">
+        Tipos Primitivos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuxFuntions/io.html" class="md-nav__link">
+        Console IO
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structs/conditional.html" class="md-nav__link">
+        Estruturas de Condicional
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structs/loop.html" class="md-nav__link">
+        Estruturas de Repetição
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CollectionsTypes/array.html" class="md-nav__link">
+        Array - Vetores
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CollectionsTypes/matrix.html" class="md-nav__link">
+        Matrix - Matrizes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CollectionsTypes/dictionary.html" class="md-nav__link">
+        Dicionários
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CollectionsTypes/set.html" class="md-nav__link">
+        Sets - Conjuntos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="func.html" class="md-nav__link">
+        Funções (def)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Expressões Lambda (lambda)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="lambda.html" class="md-nav__link md-nav__link--active">
+        Expressões Lambda (lambda)
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe" class="md-nav__link">
+    Sintaxe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quando-nao-utilizar" class="md-nav__link">
+    Quando não utilizar?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quando-utilizar" class="md-nav__link">
+    Quando utilizar ?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuxFuntions/file.html" class="md-nav__link">
+        Arquivos
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe" class="md-nav__link">
+    Sintaxe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quando-nao-utilizar" class="md-nav__link">
+    Quando não utilizar?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quando-utilizar" class="md-nav__link">
+    Quando utilizar ?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Expressões Lambda (lambda)</h1>
+                
+                <h3 id="sintaxe">Sintaxe<a class="headerlink" href="#sintaxe" title="Permanent link">&para;</a></h3>
+<p>Antes de qualquer coisa vamos apresentar a sintaxe das funções lambda:</p>
+<p>1-) Criar uma expressão lambda para verificar paridade de um numero:</p>
+<div class="highlight"><pre><span></span><code><span class="n">fParidade</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">numero</span><span class="p">:</span> <span class="s2">&quot;PAR&quot;</span> <span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;IMPAR&quot;</span>
+</code></pre></div>
+<p>NOTE QUE: Ao utilizarmos a palavra reservada <strong>lambda</strong> devemos nomea-la atribuindo-a para uma variável no exemplo acima nomeamos-a <strong>fParidade</strong>, logo após a palavra reservada devemos escrever os parâmetros da função, ou seja, nossa função lambda acima é uma função que tem somente um parâmetro chamado <strong>numero</strong>, após dizermos os parâmetros definimos a função depois do caractere <strong>'' : ''</strong> , no exemplo acima utilizamos uma estrutura condicional para definir o retorno, quando utilizamos um condicional em uma expressão <strong>lambda</strong> devemos primeiro escrever o retorno para a condição verdadeira, em seguida a condição com <strong>if</strong> e por fim a palavra reservada <strong>else</strong> e o retorno se falsa.</p>
+<p>2-) Criar uma expressão lambda que tenha dois parâmetros <strong>x</strong> e <strong>y</strong> e retorne <strong>x</strong>^<strong>y</strong> :</p>
+<div class="highlight"><pre><span></span><code><span class="n">fPotencia</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="n">y</span>
+</code></pre></div>
+<p>Acima temos uma expressão <strong>lambda</strong> com mais de um parâmetro, teoricamente podemos definir quantos parâmetros quisermos, mas perceba que o intuito desta sintaxe é definir funções simples sem precisar usar uma definição mais verbosa como <strong>def</strong>.</p>
+<p>Bom com essa pequena introdução acima vamos reescrever o exercício das matrizes somente com expressões lambda, vamos ver na pratica quando utiliza-las e quando não.</p>
+<h3 id="quando-nao-utilizar">Quando não utilizar?<a class="headerlink" href="#quando-nao-utilizar" title="Permanent link">&para;</a></h3>
+<p>1-) Vamos supor que você precisa criar um programa em Python que faça operações básicas com matrizes ambas N x N. Antes de sair escrevendo seu código vamos pensar nas coisas que precisamos fazer para que o algoritmo funcione:</p>
+<ul>
+<li>Ler Matrizes e armazena-las</li>
+<li>Escrever o código para as operações (Soma/Subtração)</li>
+<li>Escrever o código para apresentar o resultado</li>
+</ul>
+<p>SHOW ME THE CODE KKK:</p>
+<div class="highlight"><pre><span></span><code><span class="n">LerLinha</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">elemento</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span> <span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+
+<span class="n">LerMatriz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">qtdLinhas</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">matriz</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">linha</span><span class="p">:</span> <span class="n">linha</span><span class="p">,</span><span class="n">LerLinha</span><span class="p">())),</span><span class="nb">range</span><span class="p">(</span><span class="n">qtdLinhas</span><span class="p">)))</span>
+
+<span class="n">SomaMatrizes</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">m1</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">+</span> <span class="n">m2</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">[</span><span class="mi">0</span><span class="p">])))),</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">))))</span>
+
+<span class="n">SubtraiMatrizes</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">m1</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">-</span> <span class="n">m2</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">[</span><span class="mi">0</span><span class="p">])))),</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">))))</span>
+
+<span class="n">ApresentaMatriz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">matriz</span><span class="p">:</span> <span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">linha</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="n">matriz</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">qtdLinhas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o numero de Linhas da Matriz: &quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">MATRIZ 1:&#39;</span><span class="p">)</span>
+    <span class="n">m1</span> <span class="o">=</span> <span class="n">LerMatriz</span><span class="p">(</span><span class="n">qtdLinhas</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">MATRIZ 2:&#39;</span><span class="p">)</span>
+    <span class="n">m2</span> <span class="o">=</span> <span class="n">LerMatriz</span><span class="p">(</span><span class="n">qtdLinhas</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">SOMA DE MATRIZES:&#39;</span><span class="p">)</span>
+    <span class="n">ApresentaMatriz</span><span class="p">(</span><span class="n">SomaMatrizes</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">SUBTRAÇÃO DE MATRIZES:&#39;</span><span class="p">)</span>
+    <span class="n">ApresentaMatriz</span><span class="p">(</span><span class="n">SubtraiMatrizes</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">))</span>
+
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>Não se assunte se você não entendeu o código acima, ele é um exemplo de abuso do uso de expressões <strong>lambda</strong>, o primeiro questionamento que você deve fazer ao escrever um código é se ele é legível, olhando para o código acima é muito difícil entender oque cada função faz sem realizar a leitura de seus nomes, outro problema é a composição de expressões <strong>lambda</strong>, assim como a definição de funções dentro de funções é uma pratica ruim a composição de <strong>lambdas</strong> também é, a conclusão é que devemos ter bom senso ao tentar reduzir as linhas de nosso programa, devemos sempre nos preocupar com a <strong>legibilidade</strong> e <strong>simplicidade</strong> da nossa solução, e por fim a documentação vimos que quando utilizamos a palavra reservada <strong>def</strong> podemos usar um comentário com 3 aspas duplas para dar uma noção aos outros programadores sobre o funcionamento do nosso método além disso vimos que podemos explicitar os tipos dos parâmetros e retorno de nossas funções, ambas as operações não são possíveis com a a sintaxe <strong>lambda</strong>.</p>
+<p><strong><em>“Qualquer tolo consegue escrever código que um computador entenda. Bons programadores escrevem código que humanos possam entender.”</em></strong></p>
+<p><strong>Martin Fowler</strong></p>
+<h3 id="quando-utilizar">Quando utilizar ?<a class="headerlink" href="#quando-utilizar" title="Permanent link">&para;</a></h3>
+<p>Agora vamos ver casos de uso para <strong>lambda functions</strong> que fazem sentido.</p>
+<p>1-) Faça uma função de filtro que receba um array e pegue somente numeros pares:</p>
+<div class="highlight"><pre><span></span><code><span class="n">filtro</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">numero</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">False</span>
+
+<span class="sd">&#39;&#39;&#39; Vamos aplicar esse filtro &#39;&#39;&#39;</span>
+
+<span class="n">pares</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="n">filtro</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">pares</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>2-) Faça uma função que dado um valor n retorne o enésimo elemento da sequencia de Fibonacci:</p>
+<div class="highlight"><pre><span></span><code><span class="n">fibonacci</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span> <span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">5</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span><span class="o">**</span><span class="n">n</span> <span class="o">-</span> <span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span><span class="o">**</span><span class="n">n</span> <span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Insira n: &quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="func.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Funções (def)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Funções (def)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../AuxFuntions/file.html" class="md-footer__link md-footer__link--next" aria-label="Próximo: Arquivos" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              Arquivos
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 IEEE Computer Society UFABC
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.placeholder": "Digite para iniciar a busca", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,770 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Python com Exemplos">
+      
+      
+      
+        <meta name="author" content="Carol Martão - Guilherme Rocha">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Funções (def) - IEEE CS UFABC | Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#codigo-sem-utilizar-funcoes" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="IEEE CS UFABC | Python" class="md-header__button md-logo" aria-label="IEEE CS UFABC | Python" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IEEE CS UFABC | Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Funções (def)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../comecando/configuracoes.md" class="md-tabs__link">
+        Configuração
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../PrimitiveTypes/types.html" class="md-tabs__link md-tabs__link--active">
+        Sintaxe e Exercicios Resolvidos
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="IEEE CS UFABC | Python" class="md-nav__button md-logo" aria-label="IEEE CS UFABC | Python" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    IEEE CS UFABC | Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Configuração
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Configuração" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Configuração
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comecando/configuracoes.md" class="md-nav__link">
+        Ambiente de Desenvolvimento
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comecando/addamigo.md" class="md-nav__link">
+        IDEs - Editores de Texto
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Sintaxe e Exercicios Resolvidos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sintaxe e Exercicios Resolvidos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Sintaxe e Exercicios Resolvidos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PrimitiveTypes/types.html" class="md-nav__link">
+        Tipos Primitivos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuxFuntions/io.html" class="md-nav__link">
+        Console IO
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structs/conditional.html" class="md-nav__link">
+        Estruturas de Condicional
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structs/loop.html" class="md-nav__link">
+        Estruturas de Repetição
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CollectionsTypes/array.html" class="md-nav__link">
+        Array - Vetores
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CollectionsTypes/matrix.html" class="md-nav__link">
+        Matrix - Matrizes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CollectionsTypes/dictionary.html" class="md-nav__link">
+        Dicionários
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CollectionsTypes/set.html" class="md-nav__link">
+        Sets - Conjuntos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Funções (def)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="func.html" class="md-nav__link md-nav__link--active">
+        Funções (def)
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-sem-utilizar-funcoes" class="md-nav__link">
+    Código sem utilizar funções
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe-das-funcoes" class="md-nav__link">
+    Sintaxe Das Funções
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-utilizando-funcoes" class="md-nav__link">
+    Código utilizando funções
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lambda.html" class="md-nav__link">
+        Expressões Lambda (lambda)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuxFuntions/file.html" class="md-nav__link">
+        Arquivos
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-sem-utilizar-funcoes" class="md-nav__link">
+    Código sem utilizar funções
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe-das-funcoes" class="md-nav__link">
+    Sintaxe Das Funções
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-utilizando-funcoes" class="md-nav__link">
+    Código utilizando funções
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Funções (def)</h1>
+                
+                <p>As funções são como pequenas abstrações mais genéricas no seu código, i.e podemos definir partes menores de nosso algoritmo nomeá-las e parametriza-las, se você já utilizou alguma biblioteca em Python deve ter percebido essa sintaxe <strong>len(array) </strong>, a função <strong>len() </strong> é nativa da linguagem e retorna o comprimento de uma string, array etc.</p>
+<p>As funções nativas de uma linguagem são funções que não precisam ser definidas pelo programador como a própria função <strong>len()</strong> , entretanto o programador pode definir suas funções, veremos isso nos exemplos a seguir, antes disso é importante entender o porque utilizar funções e como elas podem te ajudar a estruturar melhor seu código e evitar a repetição dele.</p>
+<p>1-) Vamos supor que você precisa criar um programa em Python que faça operações básicas com matrizes ambas N x N. Antes de sair escrevendo seu código vamos pensar nas coisas que precisamos fazer para que o algoritmo funcione:</p>
+<ul>
+<li>Ler Matrizes e armazena-las</li>
+<li>Escrever o código para as operações (Soma/Subtração)</li>
+<li>Escrever o código para apresentar o resultado</li>
+</ul>
+<h3 id="codigo-sem-utilizar-funcoes">Código sem utilizar funções<a class="headerlink" href="#codigo-sem-utilizar-funcoes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">numeroDeLinhas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Insira o numero de Linhas das Matrizes: &#39;</span><span class="p">))</span>
+<span class="n">matriz1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">matriz2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">aux</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="s1">&#39;Leitura Da Matriz e Armazenamento&#39;</span>
+<span class="k">while</span> <span class="n">aux</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Insira a Matriz </span><span class="si">{</span><span class="n">aux</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s1">:&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numeroDeLinhas</span><span class="p">):</span>
+        <span class="n">linha</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+        <span class="k">if</span> <span class="n">aux</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">matriz1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">linha</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">aux</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">matriz2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">linha</span><span class="p">)</span>
+    <span class="n">aux</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="s1">&#39;Desvio de Fluxo e Definições de Operações&#39;</span>
+<span class="n">operacao</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">1- Somar || 2-Subtrair: &#39;</span><span class="p">))</span>
+
+<span class="s1">&#39;Definição da Soma&#39;</span>
+<span class="k">if</span> <span class="n">operacao</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">resultado</span> <span class="o">=</span> <span class="p">[[</span><span class="n">matriz1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">matriz2</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+                 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matriz1</span><span class="p">[</span><span class="n">i</span><span class="p">]))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matriz1</span><span class="p">))]</span>
+
+<span class="s1">&#39;Definição da Subtração&#39;</span>
+<span class="k">elif</span> <span class="n">operacao</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">resultado</span> <span class="o">=</span> <span class="p">[[</span><span class="n">matriz1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">matriz2</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+                 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matriz1</span><span class="p">[</span><span class="n">i</span><span class="p">]))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matriz1</span><span class="p">))]</span>
+
+<span class="s1">&#39;Apresentação do Resultado&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">RESULTADO:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="n">resultado</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">linha</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>O programa acima foi construído sem a utilização das funções, independente se o algoritmo funciona devemos ter cuidado ao programar nossos algoritmos, o exemplo acima não permite o reuso do código, a lógica esta espalhada e não sabemos ao certo oque cada parte do código faz sem que seja realizado um teste de mesa ou a leitura do código.</p>
+<p>DICA: Se você precisa comentar o seu código para entender o seu funcionamento considere reescrever ou revisar o mesmo.</p>
+<p>Algumas mudanças podem deixar o código mais legível, nomes de variáveis e definição de funções são uma delas, vamos escrever o algoritmo utilizando as funções.</p>
+<p>Primeiramente devemos entender o uso da palavra reservada <strong>def</strong>, quando utilizamos esta palavra em nosso código estamos dizendo ao interpretador que vamos escrever uma função, logo após a palavra <strong>def</strong>, nomeamos nossa função e parametrizamos ela, portanto <strong>def main()</strong> é a definição de nossa função principal, é importante entender que a função <strong>main</strong> é especial no nosso código, ela que comandara a execução do nosso programa como veremos no exemplo abaixo:</p>
+<h3 id="sintaxe-das-funcoes">Sintaxe Das Funções<a class="headerlink" href="#sintaxe-das-funcoes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ola mundo&#39;</span><span class="p">)</span>
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>NOTE QUE: O código acima define a função main e chama a mesma para ser executada.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">ParOuImpar</span><span class="p">(</span><span class="n">numero</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="k">return</span> <span class="s2">&quot;PAR&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;IMPAR&quot;</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um numero para indentificar sua Paridade: &quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s1"> é </span><span class="si">{</span><span class="n">ParOuImpar</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>NOTE QUE: <strong>ParOuImpar </strong> é uma função que tem um parâmetro do tipo inteiro e retorna uma string.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">ParOuImpar</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="s2">&quot;PAR&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;IMPAR&quot;</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um numero para indentificar sua Paridade: &quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s1"> é </span><span class="si">{</span><span class="n">ParOuImpar</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>Acima podemos ver que a sintaxe usada na definição de <strong>ParOuImpar</strong> é diferente, entretanto semanticamente não temos diferenças, devemos levar em conta que escrever código é menos trabalhoso que ler, compreender e explicar, logo utilizar a sintaxe mais verbosa dizendo o tipo dos parâmetros e de retorno é interessante pois serve como "documentação" para outros programadores que utilizaram seu código, outras linguagens de programação obrigam a especificação dos tipos então considere utilizar a especificação de tipo se pretende programar em outras linguagens.</p>
+<h3 id="codigo-utilizando-funcoes">Código utilizando funções<a class="headerlink" href="#codigo-utilizando-funcoes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;Nesta função estamos utilizando a sintaxe mais verbosa onde dizemos qual o tipo de retorno e do parametro&#39;</span>
+
+<span class="k">def</span> <span class="nf">LerMatriz</span><span class="p">(</span><span class="n">qtdLinhas</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">int</span><span class="p">)):</span>
+   <span class="sd">&quot;&quot;&quot;Le um Matriz de Inteiros&quot;&quot;&quot;</span>
+   <span class="n">matriz</span> <span class="o">=</span> <span class="p">[]</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Insira as Linhas da Matriz:&quot;</span><span class="p">)</span>
+   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">qtdLinhas</span><span class="p">):</span>
+       <span class="n">linha</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+       <span class="n">matriz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">linha</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">matriz</span>
+
+<span class="k">def</span> <span class="nf">SomaMatrizes</span><span class="p">(</span><span class="n">m1</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">int</span><span class="p">)),</span> <span class="n">m2</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">int</span><span class="p">)))</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">int</span><span class="p">)):</span>
+   <span class="sd">&quot;&quot;&quot;Soma duas Matrizes de Inteiros&quot;&quot;&quot;</span>
+   <span class="k">return</span> <span class="p">[[</span><span class="n">m1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">m2</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">))]</span>
+
+<span class="s1">&#39;Nesta função estamos utilizando a sintaxe menos verbosa onde não especificamos os tipos dos parametros e retorno&#39;</span>
+
+<span class="k">def</span> <span class="nf">SubtracaoMatrizes</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;Subtrai duas Matrizes de Inteiros&quot;&quot;&quot;</span>
+   <span class="k">return</span> <span class="p">[[</span><span class="n">m1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">m2</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">))]</span>
+
+<span class="k">def</span> <span class="nf">ApresentaMatriz</span><span class="p">(</span><span class="n">m</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">int</span><span class="p">)))</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+   <span class="sd">&quot;&quot;&quot;Apresenta uma Matriz de Inteiros&quot;&quot;&quot;</span>
+   <span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="n">m</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">linha</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+
+<span class="s1">&#39;Como dito anteriormente temos a função main que controla a execução do programa&#39;</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+   <span class="n">qtdLinhas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o numero de linhas das Matrizes: &quot;</span><span class="p">))</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">MATRIZ 1:&#39;</span><span class="p">)</span>
+   <span class="n">m1</span> <span class="o">=</span> <span class="n">LerMatriz</span><span class="p">(</span><span class="n">qtdLinhas</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">MATRIZ 2:&#39;</span><span class="p">)</span>
+   <span class="n">m2</span> <span class="o">=</span> <span class="n">LerMatriz</span><span class="p">(</span><span class="n">qtdLinhas</span><span class="p">)</span>
+
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">SOMA DE MATRIZES:&#39;</span><span class="p">)</span>
+   <span class="n">ApresentaMatriz</span><span class="p">(</span><span class="n">SomaMatrizes</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">))</span>
+
+<span class="s1">&#39;Assim chamamos uma função main&#39;</span>
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>NOTE QUE: Escrevemos comentários com 3 aspas duplas abaixo das definições, isso permite que programadores que vão utilizar nosso métodos leiam e compreendam seu funcionamento, além disso se você for um programador legal e explicitar os tipos de parâmetros e retorno essas informações também aparecem nessa pequena documentação, mas atenção essa documentação deve ser sempre sucinta e objetiva.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../CollectionsTypes/set.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Sets - Conjuntos" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Sets - Conjuntos
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="lambda.html" class="md-footer__link md-footer__link--next" aria-label="Próximo: Expressões Lambda (lambda)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              Expressões Lambda (lambda)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 IEEE Computer Society UFABC
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.placeholder": "Digite para iniciar a busca", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

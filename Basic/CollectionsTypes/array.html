@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#declaracao-de-uma-lista" class="md-skip">
+        <a href="#sintaxe" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -449,50 +449,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#declaracao-de-uma-lista" class="md-nav__link">
-    Declaração de uma Lista:
+  <a href="#sintaxe" class="md-nav__link">
+    Sintaxe
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#acesso-aos-elementos" class="md-nav__link">
-    Acesso aos elementos:
+    Acesso aos elementos
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#adicao-unitaria-e-de-colecoes" class="md-nav__link">
-    Adição Unitária e de Coleções:
+  <a href="#metodos" class="md-nav__link">
+    Métodos
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insert-extend-insert" class="md-nav__link">
+    Insert - Extend - Insert
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#remocao-unitaria-e-de-colecoes" class="md-nav__link">
-    Remoção Unitária e de Coleções:
+        
+          <li class="md-nav__item">
+  <a href="#pop-remove" class="md-nav__link">
+    Pop - Remove
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#propriedades-e-outras-funcoes-de-listas" class="md-nav__link">
-    Propriedades e outras funções de Listas:
+    Propriedades e outras funções de Listas
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#percorrendo-listas" class="md-nav__link">
-    Percorrendo Listas:
+    Percorrendo Listas
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#geracao-e-filtragem-de-listas" class="md-nav__link">
-    Geração e Filtragem de Listas:
+    Geração e Filtragem de Listas
   </a>
   
 </li>
@@ -859,50 +872,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#declaracao-de-uma-lista" class="md-nav__link">
-    Declaração de uma Lista:
+  <a href="#sintaxe" class="md-nav__link">
+    Sintaxe
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#acesso-aos-elementos" class="md-nav__link">
-    Acesso aos elementos:
+    Acesso aos elementos
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#adicao-unitaria-e-de-colecoes" class="md-nav__link">
-    Adição Unitária e de Coleções:
+  <a href="#metodos" class="md-nav__link">
+    Métodos
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insert-extend-insert" class="md-nav__link">
+    Insert - Extend - Insert
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#remocao-unitaria-e-de-colecoes" class="md-nav__link">
-    Remoção Unitária e de Coleções:
+        
+          <li class="md-nav__item">
+  <a href="#pop-remove" class="md-nav__link">
+    Pop - Remove
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#propriedades-e-outras-funcoes-de-listas" class="md-nav__link">
-    Propriedades e outras funções de Listas:
+    Propriedades e outras funções de Listas
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#percorrendo-listas" class="md-nav__link">
-    Percorrendo Listas:
+    Percorrendo Listas
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#geracao-e-filtragem-de-listas" class="md-nav__link">
-    Geração e Filtragem de Listas:
+    Geração e Filtragem de Listas
   </a>
   
 </li>
@@ -922,20 +948,16 @@
                 
                   <h1>Vetores</h1>
                 
-                <div>
-<p>Agora vamos apresentar a estrutura de dados chamada lista, este tipo de estrutura permite armazenar valor de um mesmo tipo de maneira ordenada, no geral coleções de dados são estruturas muito tranquilas de trabalhar em Python, a linguagem implementa muitas funções nativas e tem uma sintaxe bem versátil para trabalhar com listas. Em linguagens de tipo estático a definição de array é diferente da de lista, um array aloca um espaço de memória contigo e fixo isso significa que uma vez declarado um array nestas linguagens ele vai ocupar aquele espaço na memória até o final da execução do programa ou até um <b>"coletor de lixo"</b> ser acionado, enquanto as listas são estruturas dinâmicas no sentido de alocação de memória, podemos adicionar e remover valores dela sem problemas, em Python você não vai ter essa diferenciação, portanto vamos considerar por praticidade que arrays e listas são as mesmas entidades.</p>
-
-<p>NOTA: Python permite que você tenha uma lista com itens de tipo diferentes, mas é importante dizer que você <b>deve</b> sempre querer trabalhar com coleções de somente um tipo de dados, isso evita muitos <b>bugs</b> no seu código e é uma boa prática em programação, se você esta ciente disso e prefere utilizar essa <b>"vantagem"</b> da linguagem use-a com cuidado.</p>
-</div>
-
-<h3 id="declaracao-de-uma-lista">Declaração de uma Lista:<a class="headerlink" href="#declaracao-de-uma-lista" title="Permanent link">&para;</a></h3>
+                <p>Agora vamos apresentar a estrutura de dados chamada lista, este tipo de estrutura permite armazenar valor de um mesmo tipo de maneira ordenada, no geral coleções de dados são estruturas muito tranquilas de trabalhar em Python, a linguagem implementa muitas funções nativas e tem uma sintaxe bem versátil para trabalhar com listas. Em linguagens de tipo estático a definição de array é diferente da de lista, um array aloca um espaço de memória contigo e fixo isso significa que uma vez declarado um array nestas linguagens ele vai ocupar aquele espaço na memória até o final da execução do programa ou até um "coletor de lixo" ser acionado, enquanto as listas são estruturas dinâmicas no sentido de alocação de memória, podemos adicionar e remover valores dela sem problemas, em Python você não vai ter essa diferenciação, portanto vamos considerar por praticidade que arrays e listas são as mesmas entidades.</p>
+<p>NOTA: Python permite que você tenha uma lista com itens de tipo diferentes, mas é importante dizer que você deve sempre querer trabalhar com coleções de somente um tipo de dados, isso evita muitos bugs no seu código e é uma boa prática em programação, se você esta ciente disso e prefere utilizar essa "vantagem" da linguagem use-a com cuidado.</p>
+<h3 id="sintaxe">Sintaxe<a class="headerlink" href="#sintaxe" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
 </code></pre></div>
 <p>NOTE QUE: As declarações feitas acima seguem uma restrição imposta em nossa definição, é uma coleção de elementos ordenados e do mesmo tipo.</p>
 <p>Para entendermos melhor as lista é importante saber que elas são estruturas indexadas, ou seja, cada elemento da lista tem uma posição especifica nela que sempre começa no valor 0 e termina no valor n -1 , onde n é o numero de elementos que temos na lista.</p>
-<h3 id="acesso-aos-elementos">Acesso aos elementos:<a class="headerlink" href="#acesso-aos-elementos" title="Permanent link">&para;</a></h3>
+<h3 id="acesso-aos-elementos">Acesso aos elementos<a class="headerlink" href="#acesso-aos-elementos" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="s1">&#39;Escreve no console o valor 1&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="s1">&#39;Escreve no console o valor 2&#39;</span>
@@ -943,7 +965,8 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">209</span><span class="p">])</span> <span class="s1">&#39;Retorna um erro kkkkk&#39;</span>
 </code></pre></div>
 <p>NOTE QUE: O erro ao escrever o item de posição 209 no console já era esperado pois como dito anteriormente só temos acesso ao índice de valor n-1, onde n é o numero de itens da lista.</p>
-<h3 id="adicao-unitaria-e-de-colecoes">Adição Unitária e de Coleções:<a class="headerlink" href="#adicao-unitaria-e-de-colecoes" title="Permanent link">&para;</a></h3>
+<h3 id="metodos">Métodos<a class="headerlink" href="#metodos" title="Permanent link">&para;</a></h3>
+<h4 id="insert-extend-insert">Insert - Extend - Insert<a class="headerlink" href="#insert-extend-insert" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="s1">&#39;Adiciona na posição 0 da lista o valor 1&#39;</span>
 <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="s1">&#39;Adiciona na posição 1 da lista o valor 2&#39;</span>
@@ -963,14 +986,14 @@
 <span class="n">lista_2</span> <span class="o">*=</span> <span class="mi">2</span>
 <span class="s1">&#39;Extende a lista com a própria lista, ou seja, lista_2 = [7,8,9,10,7,8,9,10]&#39;&#39;</span>
 </code></pre></div>
-<h3 id="remocao-unitaria-e-de-colecoes">Remoção Unitária e de Coleções:<a class="headerlink" href="#remocao-unitaria-e-de-colecoes" title="Permanent link">&para;</a></h3>
+<h4 id="pop-remove">Pop - Remove<a class="headerlink" href="#pop-remove" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 
 <span class="n">ultimo</span> <span class="o">=</span> <span class="n">lista</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="s1">&#39;Remove e retorna o ultimo item da lista, ou seja, lista = [1,2,3,4] e ultimo = 5&#39;</span>
 
 <span class="n">lista</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="s1">&#39;Remove a primeira ocorrencia do valor 2 da lista caso ele exista&#39;</span>
 </code></pre></div>
-<h3 id="propriedades-e-outras-funcoes-de-listas">Propriedades e outras funções de Listas:<a class="headerlink" href="#propriedades-e-outras-funcoes-de-listas" title="Permanent link">&para;</a></h3>
+<h3 id="propriedades-e-outras-funcoes-de-listas">Propriedades e outras funções de Listas<a class="headerlink" href="#propriedades-e-outras-funcoes-de-listas" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;123&quot;</span><span class="p">,</span><span class="s2">&quot;456&quot;</span><span class="p">]</span>
 <span class="n">comprimentoDaLista</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
 
@@ -983,14 +1006,14 @@
 <span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="s1">&#39;Ordena os elementos da lista em ordem decrescente de acordo com a implementação do tipo dos elementos&#39;</span>
 </code></pre></div>
-<h3 id="percorrendo-listas">Percorrendo Listas:<a class="headerlink" href="#percorrendo-listas" title="Permanent link">&para;</a></h3>
+<h3 id="percorrendo-listas">Percorrendo Listas<a class="headerlink" href="#percorrendo-listas" title="Permanent link">&para;</a></h3>
 <p>Bom como já passamos pelos Loops vamos ver como utiliza-los para percorrer nossas listas, podemos também realizar operações enquanto percorremos elas, veremos os exemplos abaixo:</p>
 <div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="n">indice</span><span class="p">])</span>
 </code></pre></div>
 <p>Okay o algoritmo acima é bem simples, ele só escreve no console os elementos da nossa lista, vamos ver exemplos um pouco mais complexos, aplicando filtros, e até mesmo gerando listas de maneira mais simples.</p>
-<h3 id="geracao-e-filtragem-de-listas">Geração e Filtragem de Listas:<a class="headerlink" href="#geracao-e-filtragem-de-listas" title="Permanent link">&para;</a></h3>
+<h3 id="geracao-e-filtragem-de-listas">Geração e Filtragem de Listas<a class="headerlink" href="#geracao-e-filtragem-de-listas" title="Permanent link">&para;</a></h3>
 <p>1-) Gerando uma Lista de 0 até n - 1 sem restrição:</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o limite da lista: &quot;</span><span class="p">)))]</span>
 </code></pre></div>

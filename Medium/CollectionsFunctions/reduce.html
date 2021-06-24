@@ -70,6 +70,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introducao" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -596,9 +601,44 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Reduce
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="reduce.html" class="md-nav__link md-nav__link--active">
         Reduce
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe" class="md-nav__link">
+    Sintaxe
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -767,6 +807,43 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe" class="md-nav__link">
+    Sintaxe
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -775,7 +852,52 @@
                 
                   <h1>Reduce</h1>
                 
-                
+                <h3 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h3>
+<p>Por fim nas operações com listas que utilizamos funções temos <strong>reduce</strong>, pode parecer confuso quando utilizar cada operação, mas ao final vamos tentar deixar mais claro com exemplos e casos de uso, vamos logo para o <strong>reduce</strong> então.</p>
+<p>Para utilizamos esta operação devemos realizar uma importação em nosso código, uma importação é basicamente você falando para o interpretador de Python:</p>
+<p>"Olha amigão o pacote básico que você me oferece não me satisfaz mais, traz aquele outro pacote."</p>
+<p>Vamos demonstrar a sintaxe desse comando para importar a função <strong>reduce</strong>, porém é importante dizer que podemos importar qualquer outra biblioteca ou função que esteja em um pacote Python com este comando como <strong>Pandas</strong>, <strong>NumPy</strong> e etc.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+</code></pre></div>
+<h3 id="sintaxe">Sintaxe<a class="headerlink" href="#sintaxe" title="Permanent link">&para;</a></h3>
+<p>Bom basicamente temos dois parâmetros para função <strong>reduce</strong> o primeiro refere-se ao a função que iremos aplicar aos elementos de uma coleção, como o próprio nome diz a função ira reduzir a coleção a um único elemento por meio de um <strong>predicate</strong> ou <strong>function</strong>, <strong>pedicates</strong> são expressões de retorno <strong>bool</strong> e se um <strong>predicate</strong> for utilizado a um <strong>reduce</strong> o ultimo valor <strong>true</strong> será retornado, caso aplicarmos uma <strong>function</strong> teríamos basicamente um somatório, produtório entre outros, o segundo parâmetro refere-se a própria coleção.</p>
+<p>Abaixo temos um exemplo de reduce aplicado com uma <strong>function</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+
+<span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="n">soma</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">soma</span><span class="p">,</span> <span class="n">numero</span><span class="p">:</span> <span class="n">soma</span> <span class="o">+</span> <span class="n">numero</span><span class="p">,</span> <span class="n">numeros</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Soma = </span><span class="si">{</span><span class="n">soma</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>Vamos logo ao que interessa que é aprender a utilizar <strong>reduce</strong>, bom ele lembra bastante o funcionamento do <strong>map</strong> e <strong>filter</strong>, porém como vimos <strong>map</strong> aplica uma transformação em todos os elementos da coleção baseado em uma condição, operação aritmética ou aplicação de funções e o retorno é uma coleção dos objetos transformados, o <strong>filter</strong> retorna uma coleção baseada em uma condição só o elementos que ás satisfazem serão inseridos na coleção de retorno, agora o <strong>reduce</strong> continua com o padrão de aplicar uma função a uma coleção, porém seu retorno é sempre baseado no retorno da operação aplicada, ou seja, se o retorno da expressão aplicada for <strong>int</strong> o método <strong>reduce</strong> retorna um <strong>int</strong>, vamos ver isso na prática:</p>
+<p>SHOW ME THE CODE:</p>
+<p>1-) Itere sobre uma lista de nomes, pegue e apresente o maior deles:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+
+<span class="n">nomes</span> <span class="o">=</span>  <span class="p">[</span><span class="s2">&quot;Marcos Antonio&quot;</span><span class="p">,</span><span class="s2">&quot;Jade Testando&quot;</span><span class="p">,</span><span class="s2">&quot;Ana Maluca&quot;</span><span class="p">,</span><span class="s2">&quot;Aline Crazy Crazy&quot;</span><span class="p">,</span><span class="s2">&quot;João DeBoa&quot;</span><span class="p">]</span>
+<span class="n">maiorNome</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">maiorNome</span><span class="p">,</span> <span class="n">nome</span><span class="p">:</span> <span class="n">nome</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">maiorNome</span><span class="p">)</span> <span class="k">else</span> <span class="n">maiorNome</span><span class="p">,</span> <span class="n">nomes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Maior nome é </span><span class="si">{</span><span class="n">maiorNome</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>NOTE QUE: Nossa expressão lambda do exemplo acima retorna uma <strong>string</strong> baseada em uma condição, portanto o <strong>reduce</strong> irá retornar o ultimo elemento que satisfez a condição.</p>
+<p>2-) Apresente o ultimo numero par divisível por 7 da sequencia:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+
+<span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">)]</span>
+
+<span class="n">valor</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">valor</span><span class="p">,</span> <span class="n">numero</span><span class="p">:</span> <span class="n">numero</span> <span class="k">if</span> <span class="p">(</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span> <span class="k">else</span> <span class="n">valor</span><span class="p">,</span> <span class="n">numeros</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O maior valor par divisivel por 7 é  : </span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s1">&#39;&#39;)</span>
+</code></pre></div>
+<p>3-) Some todos os número ímpares do array com a soma iniciada no numero 6:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+
+<span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">)]</span>
+
+<span class="n">valor</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">soma</span><span class="p">,</span> <span class="n">numero</span><span class="p">:</span> <span class="n">soma</span> <span class="o">+</span> <span class="n">numero</span> <span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">soma</span><span class="p">,</span> <span class="n">numeros</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A soma de todos os valores ímpares de 0 a 100000 mais o valor 6 é </span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>NOTE QUE: Inserimos um terceiro parâmetro na função <strong>reduce</strong>, ele é chamado de <strong>inital</strong>, se fornecermos uma lista vazia ao parâmetro <strong>iterator</strong> de <strong>reduce</strong> este valor será retornado, ou seja, se estivermos somando ao percorrer a coleção na primeira iteração temos <strong>initial</strong> mais o primeiro valor.</p>
                 
               
               

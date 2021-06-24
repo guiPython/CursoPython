@@ -70,6 +70,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#challenge-01" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -620,9 +625,64 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Desafios
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="medium.html" class="md-nav__link md-nav__link--active">
         Desafios
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-01" class="md-nav__link">
+    Challenge - 01
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge - 01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solucao-i" class="md-nav__link">
+    Solução I
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucao-ii" class="md-nav__link">
+    Solução II
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucao-iii" class="md-nav__link">
+    Solução III
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -767,6 +827,63 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-01" class="md-nav__link">
+    Challenge - 01
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge - 01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solucao-i" class="md-nav__link">
+    Solução I
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucao-ii" class="md-nav__link">
+    Solução II
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solucao-iii" class="md-nav__link">
+    Solução III
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -775,7 +892,114 @@
                 
                   <h1>Desafios</h1>
                 
-                
+                <h3 id="challenge-01">Challenge - 01<a class="headerlink" href="#challenge-01" title="Permanent link">&para;</a></h3>
+<p>Imagine que você trabalha para uma empresa no setor de recursos humanos e você tem a tarefa de fazer verificações em uma base de dados e trazer as seguintes informações:</p>
+<ul>
+<li>Qual a média dos salários no geral e também por gênero?</li>
+<li>Qual o setor que mais custa para empresa relativo a salário?</li>
+</ul>
+<p>Você pode dizer poxa eu faria isso facilmente no Excel ou qualquer outra ferramenta de analise de dados, as vezes estamos lidando com bases de dados muito grandes e estas ferramentas se tornam inviáveis então por mais que o exemplo a seguir pareça tranquilo tente abstrai-lo para mais tarefas.</p>
+<ul>
+<li><strong>Obs: Isso é programar kkkk, a capacidade de pegar ferramentas simples e junta-las para resolver problemas mais complexos.</strong></li>
+</ul>
+<h4 id="solucao-i">Solução I<a class="headerlink" href="#solucao-i" title="Permanent link">&para;</a></h4>
+<p>Abaixo temos uma solução com as funções <strong>map</strong>, <strong>filter</strong> e <strong>reduce</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+
+<span class="n">funcionario_01</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Marcos Paulo&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">1000.50</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;TI&quot;</span><span class="p">}</span>
+<span class="n">funcionario_02</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Paulo Gustavo&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">3650.30</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;RH&quot;</span><span class="p">}</span>
+<span class="n">funcionario_03</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Gustavo Alberto&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">5000.65</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;TI&quot;</span><span class="p">}</span>
+<span class="n">funcionario_04</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Ana Paula&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">10000.50</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;RH&quot;</span> <span class="p">}</span>
+<span class="n">funcionario_05</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Paula&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">6000.50</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;TI&quot;</span><span class="p">}</span>
+
+<span class="n">bancoDeDados</span> <span class="o">=</span> <span class="p">[</span><span class="n">funcionario_01</span><span class="p">,</span> <span class="n">funcionario_02</span><span class="p">,</span> <span class="n">funcionario_03</span><span class="p">,</span> <span class="n">funcionario_04</span><span class="p">,</span> <span class="n">funcionario_05</span><span class="p">]</span>
+
+<span class="s1">&#39;Geral&#39;</span>
+<span class="n">mediaSalarioG</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">soma</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">soma</span> <span class="o">+</span> <span class="n">func</span><span class="p">[</span><span class="s1">&#39;Salario&#39;</span><span class="p">],</span><span class="n">bancoDeDados</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">bancoDeDados</span><span class="p">)</span>
+
+<span class="s1">&#39;Homens&#39;</span>
+<span class="n">funcHomens</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">func</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">func</span><span class="p">[</span><span class="s1">&#39;Genero&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="k">else</span> <span class="kc">False</span><span class="p">,</span><span class="n">bancoDeDados</span><span class="p">))</span>
+
+<span class="n">somaSalarioH</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">soma</span><span class="p">,</span> <span class="n">salario</span><span class="p">:</span> <span class="n">soma</span> <span class="o">+</span> <span class="n">salario</span><span class="p">,</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">func</span><span class="p">:</span> <span class="n">func</span><span class="p">[</span><span class="s1">&#39;Salario&#39;</span><span class="p">],</span><span class="n">funcHomens</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">qtdHomens</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">funcHomens</span><span class="p">))</span>
+
+<span class="n">mediaSalarioH</span> <span class="o">=</span> <span class="n">somaSalarioH</span> <span class="o">/</span> <span class="n">qtdHomens</span>
+
+<span class="s1">&#39;Mulheres&#39;</span>
+<span class="n">somaSalarioM</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">soma</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">soma</span> <span class="o">+</span> <span class="n">func</span><span class="p">[</span><span class="s1">&#39;Salario&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">func</span><span class="p">[</span><span class="s1">&#39;Genero&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span> <span class="k">else</span> <span class="n">soma</span><span class="p">,</span><span class="n">bancoDeDados</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">qtdMulher</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">func</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">func</span><span class="p">[</span><span class="s1">&#39;Genero&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span> <span class="k">else</span> <span class="kc">False</span><span class="p">,</span> <span class="n">bancoDeDados</span><span class="p">)))</span>
+
+<span class="n">mediaSalarioM</span> <span class="o">=</span> <span class="n">somaSalarioM</span> <span class="o">/</span> <span class="n">qtdMulher</span>
+
+<span class="s1">&#39;Setores&#39;</span>
+
+<span class="n">setores</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">func</span><span class="p">:</span> <span class="n">func</span><span class="p">[</span><span class="s1">&#39;Setor&#39;</span><span class="p">],</span><span class="n">bancoDeDados</span><span class="p">))</span>
+
+<span class="n">SalarioSetor</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">setor</span><span class="p">:</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">soma</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">soma</span> <span class="o">+</span> <span class="n">func</span><span class="p">[</span><span class="s1">&#39;Salario&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">func</span><span class="p">[</span><span class="s1">&#39;Setor&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">setor</span> <span class="k">else</span> <span class="n">soma</span><span class="p">,</span><span class="n">bancoDeDados</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">somaSalarioSetores</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">setor</span><span class="p">:</span> <span class="p">{</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">setor</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">:</span> <span class="n">SalarioSetor</span><span class="p">(</span><span class="n">setor</span><span class="p">)},</span><span class="n">setores</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="solucao-ii">Solução II<a class="headerlink" href="#solucao-ii" title="Permanent link">&para;</a></h4>
+<p>Abaixo temos uma solução utilizando <strong>groupby</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">groupby</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+
+<span class="n">funcionario_01</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Marcos Paulo&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">1000.50</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;TI&quot;</span><span class="p">}</span>
+<span class="n">funcionario_02</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Paulo Gustavo&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">3650.30</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;RH&quot;</span><span class="p">}</span>
+<span class="n">funcionario_03</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Gustavo Alberto&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">5000.65</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;TI&quot;</span><span class="p">}</span>
+<span class="n">funcionario_04</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Ana Paula&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">10000.50</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;RH&quot;</span> <span class="p">}</span>
+<span class="n">funcionario_05</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Paula&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">6000.50</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;TI&quot;</span><span class="p">}</span>
+
+<span class="n">bancoDeDados</span> <span class="o">=</span> <span class="p">[</span><span class="n">funcionario_01</span><span class="p">,</span> <span class="n">funcionario_02</span><span class="p">,</span> <span class="n">funcionario_03</span><span class="p">,</span> <span class="n">funcionario_04</span><span class="p">,</span> <span class="n">funcionario_05</span><span class="p">]</span>
+
+<span class="s1">&#39;Genero&#39;</span>
+<span class="n">bancoDeDados</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">func</span><span class="p">:</span> <span class="n">func</span><span class="p">[</span><span class="s1">&#39;Genero&#39;</span><span class="p">])</span>
+<span class="n">baseAgrupada</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">bancoDeDados</span><span class="p">,</span><span class="n">itemgetter</span><span class="p">(</span><span class="s1">&#39;Genero&#39;</span><span class="p">))</span>
+<span class="n">GeneroSalario</span> <span class="o">=</span> <span class="p">{</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">genero</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;Soma&#39;</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">func</span><span class="p">[</span><span class="s1">&#39;Salario&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">)}</span> <span class="k">for</span> <span class="n">genero</span><span class="p">,</span> <span class="n">funcs</span> <span class="ow">in</span> <span class="n">baseAgrupada</span><span class="p">}</span>
+
+<span class="s1">&#39;Setor&#39;</span>
+<span class="n">bancoDeDados</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">func</span><span class="p">:</span> <span class="n">func</span><span class="p">[</span><span class="s1">&#39;Setor&#39;</span><span class="p">])</span>
+<span class="n">baseAgrupada</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">bancoDeDados</span><span class="p">,</span><span class="n">itemgetter</span><span class="p">(</span><span class="s1">&#39;Setor&#39;</span><span class="p">))</span>
+<span class="n">SetorSalario</span> <span class="o">=</span> <span class="p">{</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">setor</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">func</span><span class="p">[</span><span class="s1">&#39;Salario&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">)</span> <span class="k">for</span> <span class="n">setor</span><span class="p">,</span> <span class="n">funcs</span> <span class="ow">in</span> <span class="n">baseAgrupada</span><span class="p">}</span>
+</code></pre></div>
+<h4 id="solucao-iii">Solução III<a class="headerlink" href="#solucao-iii" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">groupby</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">_grouper</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="kn">import</span> <span class="nn">locale</span>
+
+<span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s1">&#39;pt_BR.UTF-8&#39;</span><span class="p">)</span>
+
+<span class="n">funcionario_01</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Marcos Paulo&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">1000.50</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;TI&quot;</span><span class="p">}</span>
+<span class="n">funcionario_02</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Paulo Gustavo&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">3650.30</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;RH&quot;</span><span class="p">}</span>
+<span class="n">funcionario_03</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Gustavo Alberto&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">5000.65</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;TI&quot;</span><span class="p">}</span>
+<span class="n">funcionario_04</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Ana Paula&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">10000.50</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;RH&quot;</span> <span class="p">}</span>
+<span class="n">funcionario_05</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s2">&quot;Paula&quot;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">:</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s1">&#39;Salario&#39;</span><span class="p">:</span> <span class="mf">6000.50</span><span class="p">,</span> <span class="s1">&#39;Setor&#39;</span><span class="p">:</span> <span class="s2">&quot;TI&quot;</span><span class="p">}</span>
+
+<span class="n">bancoDeDados</span> <span class="o">=</span> <span class="p">[</span><span class="n">funcionario_01</span><span class="p">,</span> <span class="n">funcionario_02</span><span class="p">,</span> <span class="n">funcionario_03</span><span class="p">,</span> <span class="n">funcionario_04</span><span class="p">,</span> <span class="n">funcionario_05</span><span class="p">]</span>
+
+<span class="n">sumSalary</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">soma</span><span class="p">,</span><span class="n">item</span><span class="p">:</span> <span class="n">soma</span> <span class="o">+</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;Salario&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">averageSalary</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">soma</span><span class="p">,</span><span class="n">data</span><span class="p">:</span> <span class="n">soma</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="n">_grouper</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+    <span class="n">soma</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">soma</span><span class="p">,</span><span class="n">item</span><span class="p">:</span> <span class="n">soma</span> <span class="o">+</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;Salario&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;Soma&quot;</span><span class="p">:</span><span class="n">locale</span><span class="o">.</span><span class="n">currency</span><span class="p">(</span><span class="n">soma</span><span class="p">,</span><span class="n">symbol</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span><span class="s2">&quot;Média&quot;</span><span class="p">:</span><span class="n">locale</span><span class="o">.</span><span class="n">currency</span><span class="p">(</span><span class="n">soma</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span><span class="n">symbol</span><span class="o">=</span><span class="kc">True</span><span class="p">)}</span>
+
+<span class="k">def</span> <span class="nf">SalaryGroupBy</span><span class="p">(</span><span class="n">group</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dataBase</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="n">dataBase</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="n">group</span><span class="p">])</span>
+    <span class="n">groupDataBase</span> <span class="o">=</span> <span class="n">groupby</span><span class="p">(</span><span class="n">dataBase</span><span class="p">,</span><span class="n">itemgetter</span><span class="p">(</span><span class="n">group</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">{</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="n">info</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">items</span> <span class="ow">in</span> <span class="n">groupDataBase</span><span class="p">}</span>
+
+<span class="s1">&#39;Genero&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">SalaryGroupBy</span><span class="p">(</span><span class="s1">&#39;Genero&#39;</span><span class="p">,</span><span class="n">bancoDeDados</span><span class="p">))</span>
+
+<span class="s1">&#39;Setor&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">SalaryGroupBy</span><span class="p">(</span><span class="s1">&#39;Setor&#39;</span><span class="p">,</span><span class="n">bancoDeDados</span><span class="p">))</span>
+</code></pre></div>
                 
               
               

@@ -775,7 +775,24 @@
                 
                   <h1>Filter</h1>
                 
-                
+                <p>Para resolver o exemplo acima acho interessante apresentar a função <strong>filter()</strong>, ela não é necessária como vimos, entretanto vamos montar um algoritmo com ela para resolver o exemplo 1. Antes de tudo precisamos entender que a função <strong>filter</strong> tem dois parâmetros a função de filtro que retorna um booleano que geralmente é chamada de <strong>predicate</strong> e a nossa lista que é chamada de <strong>iterable</strong> com esses dois parâmetros a <strong>filter</strong> iterar sobre nossa lista e verificar quais elementos satisfazem nossa condição, ou seja, ela aplica a todos os elementos da lista o nosso <strong>predicate</strong>.</p>
+<p>SHOW ME THE CODE KKKK</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">Filtro</span><span class="p">(</span><span class="n">fruta</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+    <span class="k">global</span> <span class="n">letra</span>
+    <span class="k">return</span> <span class="n">fruta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">letra</span>
+
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span><span class="s2">&quot;pera&quot;</span><span class="p">,</span><span class="s2">&quot;morango&quot;</span><span class="p">,</span><span class="s2">&quot;uva&quot;</span><span class="p">,</span><span class="s2">&quot;abacate&quot;</span><span class="p">,</span><span class="s2">&quot;laranja&quot;</span><span class="p">,</span><span class="s2">&quot;mamão&quot;</span><span class="p">]</span>
+
+<span class="n">letra</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite a letra: &quot;</span><span class="p">)</span>
+<span class="n">listaFiltrada</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="n">Filtro</span><span class="p">,</span><span class="n">lista</span><span class="p">)</span>
+</code></pre></div>
+<p>Vou apresentar só mais uma versão do código para resolver o exemplo 1, não se preocupe em entender essa ultima abordagem agora, tudo oque você precisa para entender esse exemplo será explicado mais a frente no material, estou apenas mostrando para te motivar a aprender mais sobre Python.</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span><span class="s2">&quot;pera&quot;</span><span class="p">,</span><span class="s2">&quot;morango&quot;</span><span class="p">,</span><span class="s2">&quot;uva&quot;</span><span class="p">,</span><span class="s2">&quot;abacate&quot;</span><span class="p">,</span><span class="s2">&quot;laranja&quot;</span><span class="p">,</span><span class="s2">&quot;mamão&quot;</span><span class="p">]</span>
+
+<span class="n">letra</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite a letra: &quot;</span><span class="p">)</span>
+<span class="n">listaFiltrada</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">fruta</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">fruta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">letra</span> <span class="k">else</span> <span class="kc">False</span> <span class="p">,</span><span class="n">lista</span><span class="p">)</span>
+</code></pre></div>
+<p>Bom como dito anteriormente semanticamente os 3 códigos não tem diferenças, entretanto podemos ver que conseguimos reduzir a quantidade de linhas de nosso programa nos aproveitando da própria sintaxe do Python, leve sempre em consideração reescrever seu código para torna-lo mais legível e simples, algumas dessas ferramentas como o uso do <strong>lambda</strong> e <strong>list comprehension </strong>muitas vezes podem tornar o seu código menos legível, então por mais que eles reduzam as linhas de seu programa se a lógica for muito complexa não são uma boa opção.</p>
                 
               
               

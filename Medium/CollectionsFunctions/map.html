@@ -70,6 +70,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#sintaxe" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -572,9 +577,44 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Map
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="map.html" class="md-nav__link md-nav__link--active">
         Map
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe" class="md-nav__link">
+    Sintaxe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios" class="md-nav__link">
+    Exercícios
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -767,6 +807,43 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe" class="md-nav__link">
+    Sintaxe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios" class="md-nav__link">
+    Exercícios
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -775,7 +852,45 @@
                 
                   <h1>Map</h1>
                 
-                
+                <h3 id="sintaxe">Sintaxe<a class="headerlink" href="#sintaxe" title="Permanent link">&para;</a></h3>
+<p>Como vimos podemos aplicar transformações em coleções, filtra-las, gera-las, existe mais uma maneira de aplicar estes conceitos as listas e arrays em Python, podemos utilizar a função <strong>map()</strong>,mas antes devemos nos atentar aos parâmetros da função <strong>map</strong>, o primeiro deles é uma função que será aplicada a cada item da lista o segundo naturalmente deve ser a lista que vamos percorrer, existe mais um ponto que devemos ter em mente a função <strong>map</strong> retorna um valor do tipo <strong>map</strong> é uma coleção de <strong><em>hashs</em></strong>, ou seja, pares de chaves codificadas e o valores da transformação aplicada aos elemento da lista, portanto devemos transformar essa coleção de <strong><em>hashs</em></strong> em uma lista para apresentar o resultado,vamos ver um exemplo simples para começar.</p>
+<ul>
+<li><strong> Obs: Serão utilizadas funções e expressões lambda nos exemplos </strong></li>
+</ul>
+<h3 id="exercicios">Exercícios<a class="headerlink" href="#exercicios" title="Permanent link">&para;</a></h3>
+<p>1-) Multiplicar os itens de um array por um valor n arbitrário:</p>
+<div class="highlight"><pre><span></span><code><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um numero para multiplicar os elementos do vetor: &quot;</span><span class="p">))</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="n">array</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">resultado</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>NOTE QUE: Foi utilizada a transformação do objeto do tipo <strong>map</strong> para um do tipo <strong>list</strong> com <strong>list( map( function, iterator ) ) </strong>.</p>
+<p>2-) Eleve ao quadrado os elementos ímpares de um array e multiplique por 5 os pares:</p>
+<div class="highlight"><pre><span></span><code><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">5</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span><span class="n">array</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">resultado</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>3-) Filtre o array de nomes por uma sequencia de caracteres fornecida pelo usuário, em seguida apresente os nomes:</p>
+<div class="highlight"><pre><span></span><code><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Marcos&quot;</span><span class="p">,</span><span class="s2">&quot;Manuel&quot;</span><span class="p">,</span><span class="s2">&quot;Monael&quot;</span><span class="p">,</span><span class="s2">&quot;Jorge&quot;</span><span class="p">,</span><span class="s2">&quot;Jade&quot;</span><span class="p">,</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span><span class="s2">&quot;Aline&quot;</span><span class="p">,</span><span class="s2">&quot;João&quot;</span><span class="p">]</span>
+<span class="n">filtro</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite a sequncia de char`s para filtrar o array: &quot;</span><span class="p">)</span>
+
+<span class="n">resultado</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">nome</span><span class="p">:</span> <span class="n">nome</span> <span class="k">if</span> <span class="n">nome</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">filtro</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span> <span class="n">array</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">resultado</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>NOTE QUE: A função <strong>map</strong> pode ser utilizada para filtrar listas, entretanto perceba que ela atribui o valor <strong>None</strong> aos objetos que não satisfazem a condição, isso gera uma lista com <strong>lixo</strong> dependendo do seu objetivo final, no caso o exercício pediu para filtrar e apresentar estes nomes, teríamos que realizar um segundo filtro no resultado para retirar os valores <strong>None</strong> de nossa lista.</p>
+<p>Porem existem aplicações para essa <strong>filtragem</strong>, veremos algumas delas abaixo:</p>
+<p>4-) Veja quantos elementos no array não satisfazem o filtro:</p>
+<p><strong><em> Obs: Existem diferentes maneiras de resolver este problema, vamos utilizar </em>map* neste primeiro exemplo: </strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Marcos&quot;</span><span class="p">,</span><span class="s2">&quot;Manuel&quot;</span><span class="p">,</span><span class="s2">&quot;Monael&quot;</span><span class="p">,</span><span class="s2">&quot;Jorge&quot;</span><span class="p">,</span><span class="s2">&quot;Jade&quot;</span><span class="p">,</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span><span class="s2">&quot;Aline&quot;</span><span class="p">,</span><span class="s2">&quot;João&quot;</span><span class="p">]</span>
+<span class="n">filtro</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite a sequncia de char`s para filtrar o array: &quot;</span><span class="p">)</span>
+
+<span class="n">array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">nome</span><span class="p">:</span> <span class="n">nome</span> <span class="k">if</span> <span class="n">nome</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">filtro</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span> <span class="n">array</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">array</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span><span class="si">}</span><span class="s1"> elementos não satisfazem o filtro.&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>Vendo os exercicios acima chamo sua atenção para que não utilize <strong>map</strong> para filtar coleções, sua utilização deve ser para aplicar transformações nos elementos da coleção.</p>
                 
               
               

@@ -668,6 +668,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Solutions/medium.html" class="md-nav__link">
+        Soluções
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -852,14 +864,14 @@
                 
                   <h1>Reduce</h1>
                 
-                <h3 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h3>
+                <h3 id="introducao"><strong>Introdução</strong><a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h3>
 <p>Por fim nas operações com listas que utilizamos funções temos <strong>reduce</strong>, pode parecer confuso quando utilizar cada operação, mas ao final vamos tentar deixar mais claro com exemplos e casos de uso, vamos logo para o <strong>reduce</strong> então.</p>
 <p>Para utilizamos esta operação devemos realizar uma importação em nosso código, uma importação é basicamente você falando para o interpretador de Python:</p>
 <p>"Olha amigão o pacote básico que você me oferece não me satisfaz mais, traz aquele outro pacote."</p>
 <p>Vamos demonstrar a sintaxe desse comando para importar a função <strong>reduce</strong>, porém é importante dizer que podemos importar qualquer outra biblioteca ou função que esteja em um pacote Python com este comando como <strong>Pandas</strong>, <strong>NumPy</strong> e etc.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 </code></pre></div>
-<h3 id="sintaxe">Sintaxe<a class="headerlink" href="#sintaxe" title="Permanent link">&para;</a></h3>
+<h3 id="sintaxe"><strong>Sintaxe</strong><a class="headerlink" href="#sintaxe" title="Permanent link">&para;</a></h3>
 <p>Bom basicamente temos dois parâmetros para função <strong>reduce</strong> o primeiro refere-se ao a função que iremos aplicar aos elementos de uma coleção, como o próprio nome diz a função ira reduzir a coleção a um único elemento por meio de um <strong>predicate</strong> ou <strong>function</strong>, <strong>pedicates</strong> são expressões de retorno <strong>bool</strong> e se um <strong>predicate</strong> for utilizado a um <strong>reduce</strong> o ultimo valor <strong>true</strong> será retornado, caso aplicarmos uma <strong>function</strong> teríamos basicamente um somatório, produtório entre outros, o segundo parâmetro refere-se a própria coleção.</p>
 <p>Abaixo temos um exemplo de reduce aplicado com uma <strong>function</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>

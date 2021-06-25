@@ -723,6 +723,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Solutions/medium.html" class="md-nav__link">
+        Soluções
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -963,7 +975,7 @@
                   <h1>Dicionários</h1>
                 
                 <p>Então vamos lá pessoal vamos entender a estrutura de dados chamada dicionário, são estruturas que funcionam com pares de chave-valor, ou seja, podemos nomear nossos registros nessa estrutura e utiliza-las para resolver problemas de maneira mais simples e com maior legibilidade, vamos ver como essa estrutura funciona.</p>
-<h3 id="sintaxe">Sintaxe<a class="headerlink" href="#sintaxe" title="Permanent link">&para;</a></h3>
+<h3 id="sintaxe"><strong>Sintaxe</strong><a class="headerlink" href="#sintaxe" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">Usuario</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span><span class="s1">&#39;Jorge&#39;</span><span class="p">,</span><span class="s1">&#39;Idade&#39;</span><span class="p">:</span><span class="mi">23</span><span class="p">}</span>
 </code></pre></div>
 <p>NOTE QUE: Temos a declaração de uma variável do tipo dicionário e percebam que utilizamos o sinal de <strong>' { } '</strong> , além disso cada par de chave-valor é separado pelo caractere <strong>' : '</strong>.</p>
@@ -975,7 +987,7 @@
 <span class="n">Usuario</span><span class="p">[</span><span class="s2">&quot;NomE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;André&quot;</span>
 </code></pre></div>
 <p>Acima conseguimos inserir um novo par chave-valor para o usuário, ou seja, dizemos que para a chave "Nome" temos o valor "Guilherme". É importante dizer que podemos registrar mais pares caso seja necessário, perceba que logo em seguida na mesma chave "Nome" alteramos seu valor para "Jorge", entretanto ao definirmos "NomE" estamos definindo uma nova chave e passando a ela o valor "André". De maneira geral a sintaxe é essa, vamos ver como acessar, atualizar e remover itens de um dicionário.</p>
-<h3 id="metodos">Métodos<a class="headerlink" href="#metodos" title="Permanent link">&para;</a></h3>
+<h3 id="metodos"><strong>Métodos</strong><a class="headerlink" href="#metodos" title="Permanent link">&para;</a></h3>
 <h4 id="update">Update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h4>
 <p>Atualização dos valores para as chave já inseridas no dicionário.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">:</span><span class="s2">&quot;Carlos&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">:</span><span class="s2">&quot;Julio&quot;</span><span class="p">}</span>
@@ -1013,7 +1025,7 @@
 <span class="nb">dict</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Dicionario Limpo: </span><span class="si">{</span><span class="nb">dict</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="percorrendo-dicionario">Percorrendo Dicionário<a class="headerlink" href="#percorrendo-dicionario" title="Permanent link">&para;</a></h3>
+<h3 id="percorrendo-dicionario"><strong>Percorrendo Dicionário</strong><a class="headerlink" href="#percorrendo-dicionario" title="Permanent link">&para;</a></h3>
 <p>É importante dizer que podemos percorrer todos os subitens relativos a estrutura dicionário, itens, chaves e valores, vamos ver como isso funciona:</p>
 <div class="highlight"><pre><span></span><code><span class="n">aluno</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Nome&quot;</span><span class="p">:</span><span class="s2">&quot;Kevin&quot;</span><span class="p">,</span><span class="s2">&quot;Idade&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="s2">&quot;RA&quot;</span><span class="p">:</span><span class="s2">&quot;XXXXXXX-XX&quot;</span><span class="p">}</span>
 
@@ -1023,7 +1035,7 @@
 <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">aluno</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Valor : </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">aluno</span><span class="o">.</span><span class="n">itens</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">aluno</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
 </code></pre></div>
 <p>Aconselho o uso destas funções para melhorar a semântica do seu código, mas vou mostrar outros dois jeitos de percorrermos as chaves e valores.</p>
@@ -1037,7 +1049,7 @@
     <span class="s1">&#39;Printa os valores do dicionario&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">carro</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
 </code></pre></div>
-<h3 id="compressao-de-dicionario">Compressão de Dicionário<a class="headerlink" href="#compressao-de-dicionario" title="Permanent link">&para;</a></h3>
+<h3 id="compressao-de-dicionario"><strong>Compressão de Dicionário</strong><a class="headerlink" href="#compressao-de-dicionario" title="Permanent link">&para;</a></h3>
 <p>Assim como as lista em que temos <strong>list comprehension</strong> com os dicionários temos <strong>dict comprehension</strong>, vamos dar uma olhada em como isso funciona com alguns exemplos.</p>
 <p>1-) Crie um dicionário que relacione os nomes com seus RAs formando um dicionário de alunos:</p>
 <div class="highlight"><pre><span></span><code><span class="n">nomes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jorge&quot;</span><span class="p">,</span><span class="s2">&quot;Marcos&quot;</span><span class="p">,</span><span class="s2">&quot;Thales&quot;</span><span class="p">,</span><span class="s2">&quot;Gabriel&quot;</span><span class="p">]</span>
@@ -1064,7 +1076,7 @@
 
 <span class="nb">print</span><span class="p">(</span><span class="n">dict_fibonacci</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="exercicio">Exercício<a class="headerlink" href="#exercicio" title="Permanent link">&para;</a></h3>
+<h3 id="exercicio"><strong>Exercício</strong><a class="headerlink" href="#exercicio" title="Permanent link">&para;</a></h3>
 <p>Vamos lá pessoa, um dos propósitos deste material é mostrar como melhorar nosso códigos e aprender a utilizar bem estruturas de dados, por isso vamos utilizar o mesmo exercício das que utilizamos na seção das matrizes.</p>
 <p>Imagine que você carrega em memória uma tabela de um banco de dados relativa as vendas e você precisa extrair alguns dados dessa tabela.</p>
 <p>Por simplicidade uma venda tem as seguintes características:</p>

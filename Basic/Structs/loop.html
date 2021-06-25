@@ -444,8 +444,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-loop" class="md-nav__link">
-    For Loop
+  <a href="#for-foreach" class="md-nav__link">
+    For  - Foreach
   </a>
   
 </li>
@@ -668,6 +668,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Solutions/medium.html" class="md-nav__link">
+        Soluções
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -831,8 +843,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-loop" class="md-nav__link">
-    For Loop
+  <a href="#for-foreach" class="md-nav__link">
+    For  - Foreach
   </a>
   
 </li>
@@ -852,9 +864,7 @@
                 
                   <h1>Estruturas de Repetição</h1>
                 
-                <h3 id="while">While<a class="headerlink" href="#while" title="Permanent link">&para;</a></h3>
-<style>.justify {text-align: justify;text-justify: inter-word;}</style>
-
+                <h3 id="while"><strong>While</strong><a class="headerlink" href="#while" title="Permanent link">&para;</a></h3>
 <p class="justify">O loop While é uma estrutura de repetição muito simples e funcional, sua vantagem é de suportar varias condições destintas simultaneamente, entretanto este loop precisa de variáveis de controle para que o algoritmo não entre em loop infinito.</p>
 
 <div class="highlight"><pre><span></span><code><span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
@@ -874,7 +884,7 @@
     <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
 </code></pre></div>
 <p>NOTE QUE: O loop do exemplo acima realiza 2 iterações, ele é um exemplo de um loop <strong>while</strong> com mais de uma condição.</p>
-<h3 id="for-loop">For Loop<a class="headerlink" href="#for-loop" title="Permanent link">&para;</a></h3>
+<h3 id="for-foreach"><strong>For  - Foreach</strong><a class="headerlink" href="#for-foreach" title="Permanent link">&para;</a></h3>
 <p class="justify">O loop For é uma estrutura de repetição bem interessante em Python, a sua vantagem em relação ao loop <b>while</b> é que não precisa da declaração de uma variável de controle e sua sintaxe é bastante simples e versátil.</p>
 
 <div class="highlight"><pre><span></span><code><span class="n">inicio</span> <span class="o">=</span> <span class="mi">1</span>
@@ -902,6 +912,19 @@
 <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div>
+<p>É importante dizer ainda sobre o loop <strong>foreach</strong> ele itera sobre uma coleção até o final dela, sabemos que ainda não vimos coleções, porém acreditamos que vale introduzir o conceito agora, vamos mostrar a coleção mais simples o <strong>array</strong> e demonstrar como iterar com <strong>for</strong> e como seria com <strong>foreach</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+</code></pre></div>
+<p>Acima temos um exemplo de iteração de coleção com o <strong>for</strong> convencional, é importante dizer que Python não distingue o <strong>for</strong> do <strong>foreach</strong> como a linguagem <strong>C#</strong> por exemplo, isto significa que a sintaxe do <strong>foreach</strong> em Python utiliza a mesma palavra reservada <strong>for</strong>, vamos ver um exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+<p>Era isso que nós queríamos dizer com o texto acima, note que semanticamente estamos dizendo <strong>para x no array</strong> -&gt; <strong>escreva x</strong>,ou seja, x automaticamente toma o valor do elemento da coleção na posição da iteração.</p>
                 
               
               

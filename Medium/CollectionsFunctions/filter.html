@@ -70,6 +70,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#motivacao" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -584,9 +589,44 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Filter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="filter.html" class="md-nav__link md-nav__link--active">
         Filter
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#motivacao" class="md-nav__link">
+    Motivação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe" class="md-nav__link">
+    Sintaxe
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -623,6 +663,18 @@
     <li class="md-nav__item">
       <a href="../../Challenges/medium.html" class="md-nav__link">
         Desafios
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Solutions/medium.html" class="md-nav__link">
+        Soluções
       </a>
     </li>
   
@@ -767,6 +819,43 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#motivacao" class="md-nav__link">
+    Motivação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe" class="md-nav__link">
+    Sintaxe
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -775,7 +864,18 @@
                 
                   <h1>Filter</h1>
                 
-                <p>Para resolver o exemplo acima acho interessante apresentar a função <strong>filter()</strong>, ela não é necessária como vimos, entretanto vamos montar um algoritmo com ela para resolver o exemplo 1. Antes de tudo precisamos entender que a função <strong>filter</strong> tem dois parâmetros a função de filtro que retorna um booleano que geralmente é chamada de <strong>predicate</strong> e a nossa lista que é chamada de <strong>iterable</strong> com esses dois parâmetros a <strong>filter</strong> iterar sobre nossa lista e verificar quais elementos satisfazem nossa condição, ou seja, ela aplica a todos os elementos da lista o nosso <strong>predicate</strong>.</p>
+                <h3 id="motivacao"><strong>Motivação</strong><a class="headerlink" href="#motivacao" title="Permanent link">&para;</a></h3>
+<p>Filtrando uma lista com <strong>list comprehension</strong>, este é o exercício resolvido do tópico de <strong>arrays</strong> do primeiro capitulo do material, vamos enuncia-lo novamente.</p>
+<p>1-) Temos uma lista de frutas e queremos filtrar para pegar apenas frutas que o nome comece com uma determinada letra:</p>
+<div class="highlight"><pre><span></span><code><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span><span class="s2">&quot;pera&quot;</span><span class="p">,</span><span class="s2">&quot;morango&quot;</span><span class="p">,</span><span class="s2">&quot;uva&quot;</span><span class="p">,</span><span class="s2">&quot;abacate&quot;</span><span class="p">,</span><span class="s2">&quot;laranja&quot;</span><span class="p">,</span><span class="s2">&quot;mamão&quot;</span><span class="p">]</span>
+
+<span class="n">letra</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite a letra: &quot;</span><span class="p">)</span>
+
+<span class="s1">&#39;list comprehension&#39;</span>
+<span class="n">frutasFiltrada</span> <span class="o">=</span> <span class="p">[</span><span class="n">fruta</span> <span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="n">frutas</span> <span class="k">if</span> <span class="n">fruta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">letra</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="sintaxe"><strong>Sintaxe</strong><a class="headerlink" href="#sintaxe" title="Permanent link">&para;</a></h3>
+<p>Para resolver o exemplo acima acho interessante apresentar a função <strong>filter()</strong>, ela não é necessária como vimos, entretanto vamos montar um algoritmo com ela para resolver o problema acima. Antes de tudo precisamos entender que a função <strong>filter</strong> tem dois parâmetros a função de filtro que retorna um booleano que geralmente é chamada de <strong>predicate</strong> e a nossa lista que é chamada de <strong>iterable</strong> com esses dois parâmetros a <strong>filter</strong> iterar sobre nossa lista e verificar quais elementos satisfazem nossa condição, ou seja, ela aplica a todos os elementos da lista o nosso <strong>predicate</strong>.</p>
 <p>SHOW ME THE CODE KKKK</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">Filtro</span><span class="p">(</span><span class="n">fruta</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
     <span class="k">global</span> <span class="n">letra</span>
@@ -786,13 +886,13 @@
 <span class="n">letra</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite a letra: &quot;</span><span class="p">)</span>
 <span class="n">listaFiltrada</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="n">Filtro</span><span class="p">,</span><span class="n">lista</span><span class="p">)</span>
 </code></pre></div>
-<p>Vou apresentar só mais uma versão do código para resolver o exemplo 1, não se preocupe em entender essa ultima abordagem agora, tudo oque você precisa para entender esse exemplo será explicado mais a frente no material, estou apenas mostrando para te motivar a aprender mais sobre Python.</p>
+<p>Vou apresentar só mais uma versão do código para resolver o problema proposto.</p>
 <div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span><span class="s2">&quot;pera&quot;</span><span class="p">,</span><span class="s2">&quot;morango&quot;</span><span class="p">,</span><span class="s2">&quot;uva&quot;</span><span class="p">,</span><span class="s2">&quot;abacate&quot;</span><span class="p">,</span><span class="s2">&quot;laranja&quot;</span><span class="p">,</span><span class="s2">&quot;mamão&quot;</span><span class="p">]</span>
 
 <span class="n">letra</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite a letra: &quot;</span><span class="p">)</span>
 <span class="n">listaFiltrada</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">fruta</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">fruta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">letra</span> <span class="k">else</span> <span class="kc">False</span> <span class="p">,</span><span class="n">lista</span><span class="p">)</span>
 </code></pre></div>
-<p>Bom como dito anteriormente semanticamente os 3 códigos não tem diferenças, entretanto podemos ver que conseguimos reduzir a quantidade de linhas de nosso programa nos aproveitando da própria sintaxe do Python, leve sempre em consideração reescrever seu código para torna-lo mais legível e simples, algumas dessas ferramentas como o uso do <strong>lambda</strong> e <strong>list comprehension </strong>muitas vezes podem tornar o seu código menos legível, então por mais que eles reduzam as linhas de seu programa se a lógica for muito complexa não são uma boa opção.</p>
+<p>Bom semanticamente os 3 códigos não tem diferenças, entretanto podemos ver que conseguimos reduzir a quantidade de linhas de nosso programa nos aproveitando da própria sintaxe do Python, leve sempre em consideração reescrever seu código para torna-lo mais legível e simples, algumas dessas ferramentas como o uso do <strong>lambda</strong> e <strong>list comprehension </strong>muitas vezes podem tornar o seu código menos legível, então por mais que eles reduzam as linhas de seu programa se a lógica for muito complexa não são uma boa opção.</p>
                 
               
               

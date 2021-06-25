@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sintaxe" class="md-skip">
+        <a href="#introducao" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -449,6 +449,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sintaxe" class="md-nav__link">
     Sintaxe
   </a>
@@ -716,6 +723,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Solutions/medium.html" class="md-nav__link">
+        Soluções
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -872,6 +891,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sintaxe" class="md-nav__link">
     Sintaxe
   </a>
@@ -948,9 +974,10 @@
                 
                   <h1>Vetores</h1>
                 
-                <p>Agora vamos apresentar a estrutura de dados chamada lista, este tipo de estrutura permite armazenar valor de um mesmo tipo de maneira ordenada, no geral coleções de dados são estruturas muito tranquilas de trabalhar em Python, a linguagem implementa muitas funções nativas e tem uma sintaxe bem versátil para trabalhar com listas. Em linguagens de tipo estático a definição de array é diferente da de lista, um array aloca um espaço de memória contigo e fixo isso significa que uma vez declarado um array nestas linguagens ele vai ocupar aquele espaço na memória até o final da execução do programa ou até um "coletor de lixo" ser acionado, enquanto as listas são estruturas dinâmicas no sentido de alocação de memória, podemos adicionar e remover valores dela sem problemas, em Python você não vai ter essa diferenciação, portanto vamos considerar por praticidade que arrays e listas são as mesmas entidades.</p>
+                <h3 id="introducao"><strong>Introdução</strong><a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h3>
+<p>Agora vamos apresentar a estrutura de dados chamada lista, este tipo de estrutura permite armazenar valor de um mesmo tipo de maneira ordenada, no geral coleções de dados são estruturas muito tranquilas de trabalhar em Python, a linguagem implementa muitas funções nativas e tem uma sintaxe bem versátil para trabalhar com listas. Em linguagens de tipo estático a definição de array é diferente da de lista, um array aloca um espaço de memória contigo e fixo isso significa que uma vez declarado um array nestas linguagens ele vai ocupar aquele espaço na memória até o final da execução do programa ou até um "coletor de lixo" ser acionado, enquanto as listas são estruturas dinâmicas no sentido de alocação de memória, podemos adicionar e remover valores dela sem problemas, em Python você não vai ter essa diferenciação, portanto vamos considerar por praticidade que arrays e listas são as mesmas entidades.</p>
 <p>NOTA: Python permite que você tenha uma lista com itens de tipo diferentes, mas é importante dizer que você deve sempre querer trabalhar com coleções de somente um tipo de dados, isso evita muitos bugs no seu código e é uma boa prática em programação, se você esta ciente disso e prefere utilizar essa "vantagem" da linguagem use-a com cuidado.</p>
-<h3 id="sintaxe">Sintaxe<a class="headerlink" href="#sintaxe" title="Permanent link">&para;</a></h3>
+<h3 id="sintaxe"><strong>Sintaxe</strong><a class="headerlink" href="#sintaxe" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
@@ -965,7 +992,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">209</span><span class="p">])</span> <span class="s1">&#39;Retorna um erro kkkkk&#39;</span>
 </code></pre></div>
 <p>NOTE QUE: O erro ao escrever o item de posição 209 no console já era esperado pois como dito anteriormente só temos acesso ao índice de valor n-1, onde n é o numero de itens da lista.</p>
-<h3 id="metodos">Métodos<a class="headerlink" href="#metodos" title="Permanent link">&para;</a></h3>
+<h3 id="metodos"><strong>Métodos</strong><a class="headerlink" href="#metodos" title="Permanent link">&para;</a></h3>
 <h4 id="insert-extend-insert">Insert - Extend - Insert<a class="headerlink" href="#insert-extend-insert" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="s1">&#39;Adiciona na posição 0 da lista o valor 1&#39;</span>
@@ -1006,14 +1033,14 @@
 <span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="s1">&#39;Ordena os elementos da lista em ordem decrescente de acordo com a implementação do tipo dos elementos&#39;</span>
 </code></pre></div>
-<h3 id="percorrendo-listas">Percorrendo Listas<a class="headerlink" href="#percorrendo-listas" title="Permanent link">&para;</a></h3>
+<h3 id="percorrendo-listas"><strong>Percorrendo Listas</strong><a class="headerlink" href="#percorrendo-listas" title="Permanent link">&para;</a></h3>
 <p>Bom como já passamos pelos Loops vamos ver como utiliza-los para percorrer nossas listas, podemos também realizar operações enquanto percorremos elas, veremos os exemplos abaixo:</p>
 <div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">indice</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="n">indice</span><span class="p">])</span>
 </code></pre></div>
 <p>Okay o algoritmo acima é bem simples, ele só escreve no console os elementos da nossa lista, vamos ver exemplos um pouco mais complexos, aplicando filtros, e até mesmo gerando listas de maneira mais simples.</p>
-<h3 id="geracao-e-filtragem-de-listas">Geração e Filtragem de Listas<a class="headerlink" href="#geracao-e-filtragem-de-listas" title="Permanent link">&para;</a></h3>
+<h3 id="geracao-e-filtragem-de-listas"><strong>Geração e Filtragem de Listas</strong><a class="headerlink" href="#geracao-e-filtragem-de-listas" title="Permanent link">&para;</a></h3>
 <p>1-) Gerando uma Lista de 0 até n - 1 sem restrição:</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o limite da lista: &quot;</span><span class="p">)))]</span>
 </code></pre></div>
@@ -1023,11 +1050,8 @@
 <p>3-) Gerando uma lista de 0 até n-1 pegando os valores ímpares e elevando-os ao quadrado e os elementos pares multiplicados pelo seu sucessor:</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o limite da lista: &quot;</span><span class="p">)))]</span>
 </code></pre></div>
-<div class = "justify">
 <p>Os exemplos acima podem sofrer modificações de acordo com suas necessidades, essa sintaxe é muito poderosa e basicamente permite quaisquer operações com os dados durante a geração da lista, aliada com as funções temos uma ferramenta muito poderosa, mas vamos com calma.</p>
-
 <p>Bom vimos nos 3 exemplos acima que gerar listas em Python é super simples, entretanto se já tivermos nossa base de dados armazenada em uma lista em Python como podemos apenas filtra-lá de maneira simples, nos exemplos abaixo vamos simular isso.</p>
-</div>
 <p>1-) Temos uma lista de frutas e queremos filtrar para pegar apenas frutas que o nome comece com uma determinada letra:</p>
 <div class="highlight"><pre><span></span><code><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span><span class="s2">&quot;pera&quot;</span><span class="p">,</span><span class="s2">&quot;morango&quot;</span><span class="p">,</span><span class="s2">&quot;uva&quot;</span><span class="p">,</span><span class="s2">&quot;abacate&quot;</span><span class="p">,</span><span class="s2">&quot;laranja&quot;</span><span class="p">,</span><span class="s2">&quot;mamão&quot;</span><span class="p">]</span>
 
